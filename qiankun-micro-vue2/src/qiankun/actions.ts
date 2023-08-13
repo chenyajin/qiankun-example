@@ -1,6 +1,6 @@
-function emptyAction() {
+function emptyAction () {
   // 提示当前使用的是空 Action
-  console.warn("Current execute action is empty!");
+  console.warn('Current execute action is empty!')
 }
 
 class Actions {
@@ -8,39 +8,40 @@ class Actions {
   actions = {
     onGlobalStateChange: emptyAction,
     setGlobalState: emptyAction,
-    offGlobalStateChange: emptyAction,
+    offGlobalStateChange: emptyAction
   };
 
   /**
    * 设置 actions
    */
-  setActions(actions: any, parentRouter: any) {
-    this.actions = actions;
-    this.parentRouter = parentRouter;
+  setActions (actions: any, parentRouter: any) {
+    this.actions = actions
+    this.parentRouter = parentRouter
   }
 
   /**
    * 映射
    */
-  onGlobalStateChange() {
-    return this.actions.onGlobalStateChange;
+  onGlobalStateChange () {
+    return this.actions.onGlobalStateChange
   }
+
   /**
    * 映射
    */
-  setGlobalState() {
-    return this.actions.setGlobalState;
+  setGlobalState () {
+    return this.actions.setGlobalState
   }
 
-  offGlobalStateChange() {
-    return this.actions.offGlobalStateChange;
+  offGlobalStateChange () {
+    return this.actions.offGlobalStateChange
   }
 
-  parentRouter() {
-    return this.parentRouter;
+  parentRouter () {
+    return this.parentRouter
   }
 }
 
-const actions = new Actions();
+const actions = new Actions()
 
-export default actions;
+export default actions

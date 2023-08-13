@@ -2,7 +2,7 @@
   <div class="home">
     <img alt="Vue logo" :src="Logo" class="logo-img" />
     <!-- <el-button type="primary" @click="handlerClick">11</el-button> -->
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <HelloWorld msg="Welcome to qiankun-base-vue3" />
   </div>
 </template>
 

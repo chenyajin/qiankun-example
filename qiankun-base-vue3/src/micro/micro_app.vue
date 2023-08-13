@@ -5,7 +5,6 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, watch, reactive, onUnmounted } from 'vue'
 import { loadMicroApp, addGlobalUncaughtErrorHandler } from 'qiankun'
 import { useRoute } from 'vue-router'
 import { microApps, registerApps } from '@/micro/micro'
@@ -44,13 +43,15 @@ watch(
   }
 )
 onMounted(async () => {
+  debugger
   console.log('MicroApp ======> 进入')
   if (window.qiankunStarted) return
   window.qiankunStarted = true
   registerApps()
   activationHandleChange(route.path)
 })
-onUnmounted(() => {
+onBeforeUnmount(() => {
+  debugger
   window.qiankunStarted = false
   Object.values(microList).forEach((mic: any) => {
     mic?.unmount()

@@ -1,10 +1,14 @@
 <template>
   <div id="subVue2App">
-    <router-view />
+    <router-view/>
   </div>
 </template>
-
-<style lang="less">
+<script>
+export default {
+  name: 'App'
+}
+</script>
+<style lang="less" scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
