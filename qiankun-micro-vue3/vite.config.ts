@@ -49,6 +49,7 @@ export default defineConfig({
   base: '/',
   server: {
     open: true,
+    host: '127.0.0.1',
     port: 5000,
     cors: true,
     headers: {
