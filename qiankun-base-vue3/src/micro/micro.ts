@@ -1,3 +1,10 @@
+/*
+ * @Author: ChenYaJin
+ * @Date: 2023-08-13 13:17:04
+ * @LastEditors: ChenYaJin
+ * @LastEditTime: 2023-08-17 17:04:45
+ * @Description: 微应用挂载相关数据
+ */
 import { registerMicroApps, start } from 'qiankun'
 import { getUserInfo } from '@/utils/index'
 import router from '@/router'
@@ -57,9 +64,8 @@ export const registerApps = () => {
   start({
     sandbox: {
       // qiankun提供的样式隔离方法（严格模式）
-      // 实验结果：开启的话，微应用的部分样式将丢失
       // strictStyleIsolation: true,
-      // experimentalStyleIsolation: true
+      experimentalStyleIsolation: true
     }
   })
 }

@@ -1,3 +1,10 @@
+<!--
+ * @Author: ChenYaJin
+ * @Date: 2023-08-13 13:17:04
+ * @LastEditors: ChenYaJin
+ * @LastEditTime: 2023-08-17 17:05:45
+ * @Description: 微应用挂载容器
+-->
 <template>
   <div class="micro-container" element-loading-text="Loading...">
     <div id="sub-app"></div>
@@ -43,7 +50,6 @@ watch(
   }
 )
 onMounted(async () => {
-  debugger
   console.log('MicroApp ======> 进入')
   if (window.qiankunStarted) return
   window.qiankunStarted = true
@@ -51,7 +57,6 @@ onMounted(async () => {
   activationHandleChange(route.path)
 })
 onBeforeUnmount(() => {
-  debugger
   window.qiankunStarted = false
   Object.values(microList).forEach((mic: any) => {
     mic?.unmount()

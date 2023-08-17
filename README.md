@@ -4,7 +4,7 @@ This template should help get you started developing with Qiankun and Vue 3 and 
 
 ## 主应用 qiankuan-base-vue3
 
-- [qiankun](https://qiankun.umijs.org/zh/) + [vue3](https://vuejs.org/) + [vite](https://vitejs.dev/)
+- [qiankun](https://qiankun.umijs.org/zh/) + [vue3](https://vuejs.org/) + [vite](https://vitejs.dev/) + [unocss](https://unocss.dev/guide/)
 
 ## 微应用 qiankun-micro-vue3
 

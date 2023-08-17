@@ -1,21 +1,18 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" :src="Logo" class="logo-img" />
-    <!-- <el-button type="primary" @click="handlerClick">11</el-button> -->
-    <HelloWorld msg="Welcome to qiankun-base-vue3" />
+    <!-- <img alt="Vue logo" :src="Logo" class="logo-img" /> -->
+    <HelloWorld msg="Welcome to qiankun-base-vue3 page-one" />
+    <ViewComponent />
   </div>
 </template>
 
 <script setup lang="ts">
-import HelloWorld from '@/components/HelloWorld.vue'
-import Logo from '@/assets/logo.svg'
+import HelloWorld from '@/components/hello_world.vue'
+import ViewComponent from '@/components/view_component.vue'
+// import Logo from '@/assets/logo.svg'
 defineOptions({
   name: 'BaseHome'
 })
-// const store = useStore()
-// const handlerClick = () => {
-// store.commit('user/addAge')
-// }
 </script>
 <style scoped>
 .home {

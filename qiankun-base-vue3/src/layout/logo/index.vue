@@ -1,3 +1,10 @@
+<!--
+ * @Author: ChenYaJin
+ * @Date: 2023-08-13 13:17:04
+ * @LastEditors: ChenYaJin
+ * @LastEditTime: 2023-08-17 17:06:27
+ * @Description: 左侧logo
+-->
 <template>
   <div class="logo-container">
     <h1><img alt="Vue logo" :src="LogoSvg" class="logo-img" />Logo</h1>

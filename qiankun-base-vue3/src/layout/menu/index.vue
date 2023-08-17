@@ -1,3 +1,10 @@
+<!--
+ * @Author: ChenYaJin
+ * @Date: 2023-08-13 13:17:04
+ * @LastEditors: ChenYaJin
+ * @LastEditTime: 2023-08-17 17:13:36
+ * @Description: 左侧菜单
+-->
 <template>
   <el-container style="height: 100%">
     <el-aside width="200px">
@@ -14,31 +21,31 @@
         <el-sub-menu index="1">
           <template #title>
             <I class="i-ep-user"></I>
-            <span>qiankun主应用</span>
+            <span>主应用 Vue3</span>
           </template>
           <el-menu-item-group>
-            <el-menu-item index="1-1" route="/base-home">qiankun 主系统主页面</el-menu-item>
-            <el-menu-item index="1-2" route="/base-one-page">qiankun 页面一</el-menu-item>
+            <el-menu-item index="1-1" route="/base-home">主应用 页面一</el-menu-item>
+            <el-menu-item index="1-2" route="/base-one-page">主应用 页面二</el-menu-item>
           </el-menu-item-group>
         </el-sub-menu>
         <el-sub-menu index="2">
           <template #title>
             <I class="i-ep-user"></I>
-            <span>Vue2 页面</span>
+            <span>微应用 Vue2 </span>
           </template>
           <el-menu-item-group>
-            <el-menu-item index="2-1" route="/micro-vue2/page-one">vue2 页面一</el-menu-item>
-            <el-menu-item index="2-2" route="/micro-vue2/page-two">vue2 页面二</el-menu-item>
+            <el-menu-item index="2-1" route="/micro-vue2/page-one"> 页面一</el-menu-item>
+            <el-menu-item index="2-2" route="/micro-vue2/page-two"> 页面二</el-menu-item>
           </el-menu-item-group>
         </el-sub-menu>
         <el-sub-menu index="3">
           <template #title>
             <I class="i-ep-user"></I>
-            <span>Vue3 页面</span>
+            <span>微应用 Vue3 </span>
           </template>
           <el-menu-item-group>
-            <el-menu-item index="3-1" route="/micro-vue3/page-one">vue3 页面一</el-menu-item>
-            <el-menu-item index="3-2" route="/micro-vue3/page-two">vue3 页面二</el-menu-item>
+            <el-menu-item index="3-1" route="/micro-vue3/page-one"> 页面一</el-menu-item>
+            <el-menu-item index="3-2" route="/micro-vue3/page-two"> 页面二</el-menu-item>
           </el-menu-item-group>
         </el-sub-menu>
       </el-menu>
