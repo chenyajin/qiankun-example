@@ -6,46 +6,9 @@ vue3 + ts + vite 模板工程-qiankun微前端主应用
 
 包管理工具：pnpm nodejs 版本：v16.x
 
-## css 预设
-
-[unocss](https://unocss.dev/guide/)
-
-unocss vscdoe 插件推荐：
-
-- UnoCSS：用于查看 css 预设的结果
-- Iconify IntelliSense： iconify 图标预览
-
-## 图标方案
-
-[iconify](https://iconify.design/)
-
-结合 unocss 来使用 svg 图标，svg 图标库请查看[icones](https://icones.js.org/)，目前仅安装了 element-plus 的图标库。
-
-同时封装了公共组件 `Icon.vue`。
-
-> 自定义的 svg 图标使用请参考文档：https://unocss.dev/presets/icons#customization 对于自定义的 svg 图标，也可以考虑使用[vite-plugin-svg-icons](https://github.com/vbenjs/vite-plugin-svg-icons/blob/main/README.zh_CN.md)。
-
-vscode 插件：
-
-- UnoCSS：unocss 规则预览
-- Iconify IntelliSense：iconify 图标预览
-
-## unocss 配置说明
-
-本项目已经设置了 unocss 相关配置，主要内容包括：
-
-- 官方预设
-- safelist：动态图标方案的解决方案
-- shortcuts：用于简化 css 预设的使用
-- theme：结合 unocss 的主题方案
-
 ## 组件库
 
 [element-plus](https://element-plus.org/)
-
-## 日期时间处理
-
-[dayjs](https://day.js.org/)
 
 ## 状态管理
 
