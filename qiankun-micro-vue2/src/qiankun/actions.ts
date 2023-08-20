@@ -1,3 +1,11 @@
+/*
+ * @Author: ChenYaJin
+ * @Date: 2023-08-13 13:17:04
+ * @LastEditors: ChenYaJin
+ * @LastEditTime: 2023-08-20 12:50:49
+ * @Description:
+ */
+import { ActionType, GlobalState, GlobalStateChange } from './type'
 function emptyAction () {
   // 提示当前使用的是空 Action
   console.warn('Current execute action is empty!')
@@ -5,16 +13,17 @@ function emptyAction () {
 
 class Actions {
   // 默认值为空 Action
-  actions = {
+  actions: any = {
     onGlobalStateChange: emptyAction,
     setGlobalState: emptyAction,
-    offGlobalStateChange: emptyAction
-  };
+    offGlobalStateChange: emptyAction,
+    getGlobalState: emptyAction
+  }
 
   /**
    * 设置 actions
    */
-  setActions (actions: any, parentRouter: any) {
+  setActions (actions: ActionType, parentRouter: any) {
     this.actions = actions
     this.parentRouter = parentRouter
   }
@@ -22,19 +31,23 @@ class Actions {
   /**
    * 映射
    */
-  onGlobalStateChange () {
-    return this.actions.onGlobalStateChange
+  onGlobalStateChange (cb: GlobalStateChange<GlobalState>) {
+    return this.actions.onGlobalStateChange(cb)
   }
 
   /**
    * 映射
    */
-  setGlobalState () {
-    return this.actions.setGlobalState
+  setGlobalState (params: GlobalState) {
+    return this.actions.setGlobalState(params)
   }
 
-  offGlobalStateChange () {
-    return this.actions.offGlobalStateChange
+  getGlobalState () {
+    return JSON.parse(JSON.stringify(this.actions.getGlobalState()))
+  }
+
+  offGlobalStateChange (params: GlobalState) {
+    return this.actions.offGlobalStateChange(params)
   }
 
   parentRouter () {

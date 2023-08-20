@@ -45,5 +45,5 @@
     "vue.config.ts",
     "types/components.d.ts",
     "package.json"],
-  "exclude": ["node_modules", "tests/server/**/*.ts", "dist", "**/*.js"]
+  "exclude": ["node_modules", "tests/server/**/*.ts", "dist"]
 }

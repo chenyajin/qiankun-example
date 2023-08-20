@@ -2,14 +2,13 @@
  * @Author: ChenYaJin
  * @Date: 2023-08-17 16:37:30
  * @LastEditors: ChenYaJin
- * @LastEditTime: 2023-08-17 16:52:54
+ * @LastEditTime: 2023-08-20 12:38:47
  * @Description: 
 -->
 <template>
   <div class="w-full">
     <h2># 全局数据：主应用传给微应用的数据</h2>
     <div class="m-v-0 m-h-auto w-90%">
-      <h3>主应用的数据 -> Name: {{ state.name }}, Age: {{ state.age }}</h3>
       <el-form label-width="50px" :model="info" style="max-width: 460px">
         <el-form-item label="Name">
           <el-input v-model.trim="info.name" />
@@ -18,7 +17,7 @@
           <el-input v-model="info.age" type="number" />
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" @click="submit"> submit </el-button>
+          <el-button type="primary" @click="submit"> 同步全局数据 </el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -47,27 +46,21 @@ defineOptions({
 })
 
 const dialogVisible = ref(false)
-const info = reactive({
-  name: '',
-  age: null
-})
-const state = reactive({
+const info = ref({
   name: '',
   age: null
 })
 
 // 初始化
-actions.onGlobalStateChange((currentState) => {
-  state.name = currentState.name
-  state.age = currentState.age
-  info.name = currentState.name
-  info.age = currentState.age
-}, true)
+onMounted(() => {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  info.value = actions.getGlobalState().user
+})
 
 const submit = () => {
   actions.setGlobalState({
-    name: info.name,
-    age: info.age
+    user: info.value
   })
 }
 

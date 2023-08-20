@@ -2,7 +2,7 @@
  * @Author: ChenYaJin
  * @Date: 2023-08-13 13:17:04
  * @LastEditors: ChenYaJin
- * @LastEditTime: 2023-08-17 17:48:37
+ * @LastEditTime: 2023-08-20 12:16:25
  * @Description:
  */
 import { ActionType, GlobalState, GlobalStateChange } from './type'
@@ -13,17 +13,17 @@ function emptyAction() {
 
 class Actions {
   // 默认值为空 Action
-  actions: ActionType = {
+  actions: any = {
     onGlobalStateChange: emptyAction,
     setGlobalState: emptyAction,
-    offGlobalStateChange: emptyAction
+    offGlobalStateChange: emptyAction,
+    getGlobalState: emptyAction
   }
 
   /**
    * 设置 actions
    */
   setActions(actions: ActionType, parentRouter: any) {
-    debugger
     this.actions = actions
     this.parentRouter = parentRouter
   }
@@ -39,6 +39,10 @@ class Actions {
    */
   setGlobalState(params: GlobalState) {
     return this.actions.setGlobalState(params)
+  }
+
+  getGlobalState() {
+    return JSON.parse(JSON.stringify(this.actions.getGlobalState()))
   }
 
   offGlobalStateChange(params: GlobalState) {

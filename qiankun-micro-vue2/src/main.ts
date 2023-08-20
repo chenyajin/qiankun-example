@@ -9,7 +9,7 @@ import actions from './qiankun/actions'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
-import { renderWithQiankun, QiankunProps } from 'vite-plugin-qiankun/dist/helper'
+import { QiankunProps } from 'vite-plugin-qiankun/dist/helper'
 
 Vue.use(ElementUI)
 
@@ -24,13 +24,15 @@ function render (props: QiankunProps = {}) {
     onGlobalStateChange,
     setGlobalState,
     offGlobalStateChange,
+    getGlobalState,
     router: parentRouter
   } = props
 
   const parentActions = {
     onGlobalStateChange,
     setGlobalState,
-    offGlobalStateChange
+    offGlobalStateChange,
+    getGlobalState
   }
   actions.setActions(parentActions, parentRouter)
   router = new VueRouter({

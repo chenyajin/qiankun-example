@@ -14,13 +14,15 @@ const render = (props: QiankunProps = {}) => {
     router: parentRouter,
     onGlobalStateChange,
     setGlobalState,
-    offGlobalStateChange
+    offGlobalStateChange,
+    getGlobalState
   } = props
 
   const parentActions = {
     onGlobalStateChange,
     setGlobalState,
-    offGlobalStateChange
+    offGlobalStateChange,
+    getGlobalState
   }
   actions.setActions(parentActions, parentRouter)
   const app: string | Element = container?.querySelector('#subVue3App') || '#subVue3App' // 避免 id 重复导致微应用挂载失败
