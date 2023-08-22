@@ -3,6 +3,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './App.vue'
 import { routes } from './router'
+import { createRouterGuards } from './router/guards'
 // import store from './store';
 import actions from './qiankun/actions'
 
@@ -25,7 +26,9 @@ function render (props: QiankunProps = {}) {
     setGlobalState,
     offGlobalStateChange,
     getGlobalState,
-    router: parentRouter
+    router: parentRouter,
+    breadcrumbStore,
+    routerBase
   } = props
 
   const parentActions = {
@@ -34,12 +37,13 @@ function render (props: QiankunProps = {}) {
     offGlobalStateChange,
     getGlobalState
   }
-  actions.setActions(parentActions, parentRouter)
+  actions.setActions(parentActions, parentRouter, breadcrumbStore, routerBase)
   router = new VueRouter({
     base: window.__POWERED_BY_QIANKUN__ ? '/micro-vue2' : '/',
     mode: 'history',
     routes
   })
+  createRouterGuards(router)
   const app: string | Element =
     container?.querySelector('#subVue2App') || '#subVue2App'
 

@@ -2,12 +2,13 @@
  * @Author: ChenYaJin
  * @Date: 2023-08-13 13:17:04
  * @LastEditors: ChenYaJin
- * @LastEditTime: 2023-08-20 11:54:00
+ * @LastEditTime: 2023-08-22 17:36:58
  * @Description: 微应用挂载相关数据
  */
 import { registerMicroApps, start } from 'qiankun'
 import actions from '@/qiankun/actions'
-import router from '@/router'
+// import router from '@/router'
+import { useBreadcrumbStoreWithOut } from '@/stores/breadcrumb'
 
 export const apps = [
   {
@@ -27,7 +28,8 @@ export const microApps = apps.map((item) => {
     container: '#sub-app', // 子应用挂载的div
     props: {
       routerBase: item.activeRule, // 下发基础路由
-      router: router,
+      router: null,
+      breadcrumbStore: useBreadcrumbStoreWithOut,
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       getGlobalState: actions.getGlobalState // 下发getGlobalState方法

@@ -20,6 +20,7 @@ defineOptions({
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border: 1px dotted red;
 }
 .logo-img {
   width: 100px;

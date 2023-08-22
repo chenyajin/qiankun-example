@@ -18,3 +18,7 @@ export type ActionType<T = unknown> = {
   offGlobalStateChange: GlobalStateChange<T>
   getGlobalState: GetGlobalStateChange
 }
+
+export type BreadcrumbStoreType = {
+  setMicroBreadcrumb: (list: unknown[]) => void
+}

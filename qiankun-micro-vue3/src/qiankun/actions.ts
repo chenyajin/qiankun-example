@@ -2,30 +2,39 @@
  * @Author: ChenYaJin
  * @Date: 2023-08-13 13:17:04
  * @LastEditors: ChenYaJin
- * @LastEditTime: 2023-08-20 12:16:25
+ * @LastEditTime: 2023-08-22 11:26:37
  * @Description:
  */
-import { ActionType, GlobalState, GlobalStateChange } from './type'
+import { ActionType, BreadcrumbStoreType, GlobalState, GlobalStateChange } from './type'
 function emptyAction() {
-  // 提示当前使用的是空 Action
   console.warn('Current execute action is empty!')
 }
 
 class Actions {
-  // 默认值为空 Action
+  // 全局数据
   actions: any = {
     onGlobalStateChange: emptyAction,
     setGlobalState: emptyAction,
     offGlobalStateChange: emptyAction,
     getGlobalState: emptyAction
   }
+  // 主应用面包屑store
+  breadcrumbStore: BreadcrumbStoreType = {
+    setMicroBreadcrumb: ([]) => []
+  }
+  // 主应用下发基础路由
+  routerBase = ''
 
   /**
    * 设置 actions
    */
-  setActions(actions: ActionType, parentRouter: any) {
+  setActions(actions: ActionType, parentRouter: any, breadcrumbStore: any, routerBase: string) {
     this.actions = actions
     this.parentRouter = parentRouter
+    this.routerBase = routerBase
+    if (breadcrumbStore instanceof Function) {
+      this.breadcrumbStore = breadcrumbStore ? breadcrumbStore() : {}
+    }
   }
 
   /**

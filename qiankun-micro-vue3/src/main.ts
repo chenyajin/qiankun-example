@@ -11,7 +11,9 @@ import { renderWithQiankun, qiankunWindow, QiankunProps } from 'vite-plugin-qian
 const render = (props: QiankunProps = {}) => {
   const {
     container,
+    routerBase,
     router: parentRouter,
+    breadcrumbStore,
     onGlobalStateChange,
     setGlobalState,
     offGlobalStateChange,
@@ -24,7 +26,7 @@ const render = (props: QiankunProps = {}) => {
     offGlobalStateChange,
     getGlobalState
   }
-  actions.setActions(parentActions, parentRouter)
+  actions.setActions(parentActions, parentRouter, breadcrumbStore, routerBase)
   const app: string | Element = container?.querySelector('#subVue3App') || '#subVue3App' // 避免 id 重复导致微应用挂载失败
   const instance = createApp(App)
   instance.use(ElementPlus)
