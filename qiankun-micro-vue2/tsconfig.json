@@ -14,7 +14,8 @@
     "baseUrl": ".",
     "types": [
       "webpack-env",
-      "node"
+      "node",
+      "./node_modules/element-ui/types"
     ],
     "typeRoots": ["./node_modules/@types/", "./types"],
     "paths": {

@@ -2,7 +2,7 @@
  * @Author: ChenYaJin
  * @Date: 2023-08-17 16:37:30
  * @LastEditors: ChenYaJin
- * @LastEditTime: 2023-08-20 13:02:25
+ * @LastEditTime: 2023-08-23 11:27:09
  * @Description:
 -->
 <template>
@@ -24,11 +24,9 @@
 
     <h2># element-ui 组件样式预览2</h2>
     <el-button @click="dialogVisible = true"> click to open the Dialog </el-button>
-
-    <el-button type="text" @click="dialogVisible = true">点击打开 Dialog</el-button>
     <el-dialog
       title="提示"
-      :visible.sync="dialogVisible"
+      :visible="dialogVisible"
       width="30%"
       :before-close="handleClose">
       <span>这是一段信息</span>
@@ -56,7 +54,9 @@ export default Vue.extend({
     }
   },
   mounted () {
-    this.info = actions.getGlobalState().user
+    if (actions.getGlobalState instanceof Function) {
+      this.info = actions.getGlobalState().user
+    }
   },
   methods: {
     submit () {

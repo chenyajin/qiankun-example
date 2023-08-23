@@ -2,7 +2,7 @@
  * @Author: ChenYaJin
  * @Date: 2023-08-13 13:17:04
  * @LastEditors: ChenYaJin
- * @LastEditTime: 2023-08-22 15:55:06
+ * @LastEditTime: 2023-08-23 11:30:13
  * @Description:
  */
 import { ActionType, BreadcrumbStoreType, GlobalState, GlobalStateChange } from './type'
@@ -27,6 +27,8 @@ class Actions {
 
   // 主应用下发基础路由
   routerBase = ''
+
+  parentRouter = {}
 
   /**
    * 设置 actions
@@ -55,15 +57,11 @@ class Actions {
   }
 
   getGlobalState () {
-    return JSON.parse(JSON.stringify(this.actions.getGlobalState()))
+    return this.actions.getGlobalState instanceof Function ? JSON.parse(JSON.stringify(this.actions.getGlobalState())) : {}
   }
 
   offGlobalStateChange (params: GlobalState) {
     return this.actions.offGlobalStateChange(params)
-  }
-
-  parentRouter () {
-    return this.parentRouter
   }
 }
 

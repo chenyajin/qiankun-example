@@ -1,6 +1,9 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  '@element-plus/icons-vue':
+    specifier: ^2.1.0
+    version: 2.1.0(vue@3.3.4)
   element-plus:
     specifier: ^2.3.9
     version: 2.3.9(vue@3.3.4)

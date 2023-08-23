@@ -1,0 +1,6 @@
+@forward 'element-plus/theme-chalk/src/mixins/config.scss' with (
+  $namespace: 'ep'
+);
+
+// if you want to import all
+// @use "element-plus/theme-chalk/src/index.scss" as *;

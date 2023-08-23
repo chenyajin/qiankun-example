@@ -2,7 +2,7 @@
  * @Author: ChenYaJin
  * @Date: 2023-08-17 16:37:30
  * @LastEditors: ChenYaJin
- * @LastEditTime: 2023-08-22 17:39:57
+ * @LastEditTime: 2023-08-23 10:45:12
  * @Description: 
 -->
 <template>
@@ -25,7 +25,7 @@
     <h2># element-plus 组件样式预览</h2>
     <el-button @click="dialogVisible = true"> click to open the Dialog </el-button>
 
-    <el-dialog v-model="dialogVisible" title="Tips" width="30%">
+    <el-dialog v-model="dialogVisible" title="Tips" width="30%" :before-close="handleClose">
       <span>This is a message</span>
       <template #footer>
         <span class="dialog-footer">
@@ -65,7 +65,6 @@ const submit = () => {
   })
 }
 
-// :before-close="handleClose"
 const handleClose = (done: () => void) => {
   ElMessageBox.confirm('Are you sure to close this dialog?')
     .then(() => {

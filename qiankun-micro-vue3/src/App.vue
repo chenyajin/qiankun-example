@@ -1,5 +1,5 @@
 <template>
-  <el-config-provider :size="elConfig.size" :z-index="elConfig.zIndex" :locale="zhCn">
+  <el-config-provider :z-index="elConfig.zIndex" :locale="zhCn" namespace="ep">
     <RouterView />
   </el-config-provider>
 </template>
@@ -8,7 +8,6 @@ import { RouterView } from 'vue-router'
 import zhCn from 'element-plus/es/locale/lang/zh-cn'
 
 const elConfig = ref({
-  size: 'default',
   zIndex: 300
 })
 </script>

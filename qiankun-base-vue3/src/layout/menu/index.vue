@@ -2,7 +2,7 @@
  * @Author: ChenYaJin
  * @Date: 2023-08-13 13:17:04
  * @LastEditors: ChenYaJin
- * @LastEditTime: 2023-08-17 17:13:36
+ * @LastEditTime: 2023-08-23 10:47:03
  * @Description: 左侧菜单
 -->
 <template>
@@ -30,7 +30,7 @@
         </el-sub-menu>
         <el-sub-menu index="2">
           <template #title>
-            <I class="i-ep-user"></I>
+            <!-- <I class="i-ep-user"></I> -->
             <span>微应用 Vue2 </span>
           </template>
           <el-menu-item-group>
@@ -40,7 +40,7 @@
         </el-sub-menu>
         <el-sub-menu index="3">
           <template #title>
-            <I class="i-ep-user"></I>
+            <!-- <I class="i-ep-user"></I> -->
             <span>微应用 Vue3 </span>
           </template>
           <el-menu-item-group>
@@ -76,7 +76,7 @@ const handleClose = () => {
   border-radius: 10px;
   background: rgb(51, 154, 223);
 }
-:deep(.el-menu) {
+:deep(.ep-base-menu) {
   height: 100%;
 }
 </style>

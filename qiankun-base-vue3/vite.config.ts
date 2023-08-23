@@ -36,7 +36,9 @@ export default defineConfig({
       // 按需导入组件，相关组件声明放置于 components.d.ts
       dts: './types/components.d.ts',
       resolvers: [
-        ElementPlusResolver(), // 自动注册图标组件
+        ElementPlusResolver({
+          importStyle: 'sass'
+        }), // 自动注册图标组件
         IconsResolver({
           enabledCollections: ['ep']
         })
@@ -50,6 +52,13 @@ export default defineConfig({
     port: 5173,
     headers: {
       'Access-Control-Allow-Origin': '*'
+    }
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "@/styles/element/index.scss" as *;`
+      }
     }
   }
 })

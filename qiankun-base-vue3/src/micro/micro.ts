@@ -2,7 +2,7 @@
  * @Author: ChenYaJin
  * @Date: 2023-08-13 13:17:04
  * @LastEditors: ChenYaJin
- * @LastEditTime: 2023-08-22 17:36:58
+ * @LastEditTime: 2023-08-23 15:50:55
  * @Description: 微应用挂载相关数据
  */
 import { registerMicroApps, start } from 'qiankun'
@@ -66,9 +66,10 @@ export const registerApps = () => {
 
   start({
     sandbox: {
-      // qiankun提供的样式隔离方法（严格模式）
-      // strictStyleIsolation: true,
-      experimentalStyleIsolation: true
+      // 开启 shadow dom：主应用影响不了子应用的样式，但是弹窗样式有影响
+      // strictStyleIsolation: true
+      // 实验性： 通过添加data-qiankun=“”来隔离
+      // experimentalStyleIsolation: true
     }
   })
 }
